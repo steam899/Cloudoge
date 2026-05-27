@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #020617;
+  color: white;
+  overflow-x: hidden;
+}
+
+.star-bg {
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.1;
+}
+
+.gold-glow {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+}
