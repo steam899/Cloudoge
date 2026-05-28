@@ -1,0 +1,232 @@
+"use client";
+
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Cloud, Moon, Stars, ExternalLink, Copy, Check, Twitter, 
+  Send, BarChart3, Zap, ShieldCheck, Rocket, Flame, Globe, Info, Heart
+} from 'lucide-react';
+
+const contractAddress = "0x26f75C5eD01bb7Be6cFb807a332593b1D6c77139";
+const chartUrl = "https://world.org/mini-app?app_id=app_4593f73390a9843503ec096086b43612&path=/launchpad/token/0x26f75C5eD01bb7Be6cFb807a332593b1D6c77139";
+
+export default function CloudogeLanding() {
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(contractAddress);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="min-h-screen bg-navy selection:bg-gold/30">
+      {/* Background Decor */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 star-bg"></div>
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-sky-500/10 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-gold/5 blur-[120px] rounded-full"></div>
+      </div>
+
+      {/* Navbar */}
+      <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-navy/80 backdrop-blur-lg">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 bg-gold rounded-full flex items-center justify-center shadow-lg shadow-gold/20">
+              <Cloud className="text-navy fill-navy" size={20} />
+            </div>
+            <span className="text-2xl font-black tracking-tighter text-white">CLOUDOGE</span>
+          </div>
+          <div className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-300">
+            <a href="#about" className="hover:text-gold transition-colors">ABOUT</a>
+            <a href="#tokenomics" className="hover:text-gold transition-colors">TOKENOMICS</a>
+            <a href="#roadmap" className="hover:text-gold transition-colors">ROADMAP</a>
+            <button className="px-6 py-2 bg-gold hover:bg-white text-navy rounded-full transition-all font-black">
+              BUY $CLOUD
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* 1. HERO SECTION */}
+      <section className="relative pt-40 pb-20 px-6 z-10">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-black mb-6 tracking-widest">
+              <Zap size={14} /> LIVE ON WORLD CHAIN
+            </div>
+            <h1 className="text-6xl md:text-8xl font-black text-white leading-[0.9] mb-6">
+              The Dreamiest <br />
+              <span className="text-sky-400">Meme Coin</span>
+            </h1>
+            <p className="text-xl text-slate-400 max-w-lg mb-10 leading-relaxed">
+              CLOUDOGE ($CLOUD) is building a strong community of dreamers, holders, and moon believers. Catch the vibe, join the cloud.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <button className="px-8 py-4 bg-gold hover:scale-105 text-navy rounded-2xl font-black transition-all shadow-xl shadow-gold/20">BUY $CLOUD</button>
+              <a href={chartUrl} target="_blank" className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white rounded-2xl font-bold transition-all flex items-center gap-2 border border-white/10">
+                <BarChart3 size={18} /> VIEW CHART
+              </a>
+              <button className="px-8 py-4 bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 rounded-2xl font-bold transition-all flex items-center gap-2 border border-sky-500/20">
+                <Send size={18} /> TELEGRAM
+              </button>
+            </div>
+          </motion.div>
+
+          <motion.div className="relative flex justify-center" animate={{ y: [0, -20, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
+             <div className="relative w-80 h-80 md:w-[450px] md:h-[450px]">
+                <div className="absolute inset-0 bg-gold/20 blur-[100px] rounded-full"></div>
+                <img src="/logo.png" alt="Cloudoge" className="relative z-10 w-full h-full object-contain" />
+                <div className="absolute top-0 right-0 animate-bounce"><Moon className="text-gold fill-gold" size={48} /></div>
+             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 2. LIVE TOKEN INFO */}
+      <section className="py-12 px-6 z-10 relative">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4">
+          {[
+            { label: "Supply", val: "100M", icon: <Globe size={16}/> },
+            { label: "Burned", val: "500K 🔥", icon: <Flame size={16}/> },
+            { label: "Fee", val: "1%", icon: <Info size={16}/> },
+            { label: "Network", val: "World Chain", icon: <ShieldCheck size={16}/> },
+            { label: "Status", val: "Active", icon: <Zap size={16}/> },
+          ].map((s, i) => (
+            <div key={i} className="p-6 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-md">
+              <div className="text-gold mb-2">{s.icon}</div>
+              <div className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">{s.label}</div>
+              <div className="text-xl font-black text-white">{s.val}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 3. ABOUT & 4. WHY */}
+      <section id="about" className="py-32 px-6 z-10 relative">
+        <div className="max-w-7xl mx-auto text-center mb-20">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-6">What is CLOUDOGE?</h2>
+          <p className="text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            CLOUDOGE is a cozy meme token built for community, rewards, and the future of Web3 culture.
+          </p>
+        </div>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
+          {[
+            "Cozy Branding", "Meme Community", "Community Rewards", "Burn Events", "Future Mini Apps", "Web3 Expansion"
+          ].map((title, i) => (
+            <div key={i} className="p-10 rounded-3xl bg-white/5 border border-white/5 hover:border-gold/30 transition-all group">
+              <div className="w-12 h-12 bg-gold/10 rounded-2xl flex items-center justify-center text-gold mb-6 group-hover:scale-110 transition-transform">
+                <Rocket size={24} />
+              </div>
+              <h3 className="text-xl font-black text-white mb-2">{title}</h3>
+              <p className="text-slate-500">Built for the dreamers and the long-term holders.</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. TOKENOMICS */}
+      <section id="tokenomics" className="py-32 px-6 bg-black/20">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-black text-white text-center mb-16">Tokenomics</h2>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { l: "Liquidity", v: "40%", c: "border-gold" },
+              { l: "Rewards", v: "25%", c: "border-sky-400" },
+              { l: "Marketing", v: "15%", c: "border-white" },
+              { l: "Burn", v: "10%", c: "border-orange-500" },
+              { l: "Airdrops", v: "5%", c: "border-emerald-400" },
+              { l: "Team", v: "5%", c: "border-slate-500" },
+            ].map((t, i) => (
+              <motion.div key={i} whileHover={{ y: -10 }} className={`p-8 bg-navy border-l-4 ${t.c} rounded-2xl shadow-xl`}>
+                <div className="text-slate-500 font-bold mb-2 uppercase text-xs tracking-tighter">{t.l}</div>
+                <div className="text-5xl font-black text-white">{t.v}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. ROADMAP */}
+      <section id="roadmap" className="py-32 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-black text-white text-center mb-20">Roadmap</h2>
+          <div className="space-y-12 border-l-2 border-gold/20 pl-8 ml-4">
+            {[
+              { p: "Phase 1", t: "Launch", items: ["Token Launch", "Bonding Curve", "Community Launch"] },
+              { p: "Phase 2", t: "Growth", items: ["Whitepaper", "Meme Contest", "Marketing Push"] },
+              { p: "Phase 3", t: "Utility", items: ["Staking", "Mini App", "NFT Collection"] },
+            ].map((r, i) => (
+              <div key={i} className="relative">
+                <div className="absolute -left-[41px] top-0 w-4 h-4 bg-gold rounded-full border-4 border-navy"></div>
+                <span className="text-gold font-black uppercase text-sm tracking-widest">{r.p}</span>
+                <h3 className="text-3xl font-black text-white mb-4">{r.t}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {r.items.map((item, idx) => (
+                    <span key={idx} className="px-4 py-2 bg-white/5 rounded-lg text-sm border border-white/10 text-slate-400">{item}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. UPCOMING EVENTS */}
+      <section className="py-32 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-center text-4xl font-black mb-16">UPCOMING EVENTS</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {["WHITEPAPER", "CONTEST", "GIVEAWAY", "AIRDROP", "ROADMAP", "SURPRISE"].map((e, i) => (
+              <div key={i} className="p-10 bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-[40px] text-center group hover:border-gold/50 transition-all">
+                <Stars className="mx-auto mb-4 text-gold/40 group-hover:text-gold" />
+                <h4 className="font-black text-white tracking-widest">{e} COMING SOON</h4>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. COMMUNITY & 9. FINAL CTA */}
+      <section className="py-40 px-6 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gold/5 blur-[150px] rounded-full"></div>
+        <div className="relative z-10">
+          <h2 className="text-7xl md:text-[120px] font-black text-white mb-10 tracking-tighter">Sleep. Meme. Moon.</h2>
+          <div className="flex justify-center gap-6">
+            <button className="px-12 py-6 bg-gold text-navy rounded-3xl font-black text-2xl hover:scale-110 transition-transform gold-glow">HOLD $CLOUD</button>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. FOOTER */}
+      <footer className="py-20 border-t border-white/5 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+          <div>
+            <div className="flex items-center gap-2 mb-6">
+              <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center"><Cloud size={16} className="text-navy fill-navy"/></div>
+              <span className="text-xl font-black">CLOUDOGE</span>
+            </div>
+            <p className="text-slate-500 max-w-sm mb-6">Built for dreamers and moon believers. The official cozy coin of World Chain.</p>
+            <div className="flex gap-4">
+              <Twitter className="text-slate-400 hover:text-gold cursor-pointer" />
+              <Send className="text-slate-400 hover:text-gold cursor-pointer" />
+            </div>
+          </div>
+          <div className="bg-white/5 p-8 rounded-3xl border border-white/10">
+             <p className="text-xs font-black text-gold mb-2 tracking-widest uppercase">Contract Address</p>
+             <div className="flex items-center justify-between bg-black/50 p-4 rounded-xl border border-white/5">
+                <code className="text-sky-300 text-xs md:text-sm truncate mr-4">{contractAddress}</code>
+                <button onClick={copyToClipboard} className="text-white hover:text-gold transition-colors">
+                  {copied ? <Check size={20} className="text-emerald-400" /> : <Copy size={20} />}
+                </button>
+             </div>
+             <div className="mt-4 flex gap-6 text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                <span>Network: World Chain</span>
+                <a href={chartUrl} target="_blank" className="hover:text-white transition-colors">View Chart</a>
+             </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
