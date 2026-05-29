@@ -141,7 +141,7 @@ export default function CloudogeLanding() {
           <div className="space-y-12 border-l-2 border-[#fbbf24]/20 pl-8 ml-4">
             {[
               { p: "Phase 1", t: "Launch", items: ["Token Launch", "Bonding Curve", "Website Release", "Community Launch"] },
-              { p: "Phase 2", t: "Growth", items: ["Whitepaper", "Meme Contest", "Community Expension", "Marketing Push"] },
+              { p: "Phase 2", t: "Growth", items: ["Whitepaper", "Meme Contest", "Community Expension", "Marketing Push", "CoinGecko / CoinMarketCap Listing" ] },
               { p: "Phase 3", t: "Utility", items: ["NFT Collection", "Exchage Listing", "Staking System", "Mini App Integration", "NFT Collection", "Exchange Listings", "Partnerships" ] },
             ].map((r, i) => (
               <div key={i} className="relative">
