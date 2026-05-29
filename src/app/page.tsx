@@ -140,9 +140,9 @@ export default function CloudogeLanding() {
           <h2 className="text-4xl md:text-6xl font-black text-white text-center mb-20">Roadmap</h2>
           <div className="space-y-12 border-l-2 border-[#fbbf24]/20 pl-8 ml-4">
             {[
-              { p: "Phase 1", t: "Launch", items: ["Token Launch", "Bonding Curve", "Staking", "Mini App", "Community Launch"] },
-              { p: "Phase 2", t: "Growth", items: ["Whitepaper", "Meme Contest", "Marketing Push"] },
-              { p: "Phase 3", t: "Utility", items: ["NFT Collection", "Exchage Listing"] },
+              { p: "Phase 1", t: "Launch", items: ["Token Launch", "Bonding Curve", "Website Release", "Community Launch"] },
+              { p: "Phase 2", t: "Growth", items: ["Whitepaper", "Meme Contest", "Community Expension", "Marketing Push"] },
+              { p: "Phase 3", t: "Utility", items: ["NFT Collection", "Exchage Listing", "Staking System", "Mini App Integration", "NFT Collection", "Exchange Listings", "Partnerships" ] },
             ].map((r, i) => (
               <div key={i} className="relative">
                 <div className="absolute -left-[41px] top-0 w-4 h-4 bg-[#fbbf24] rounded-full border-4 border-[#020617]"></div>
