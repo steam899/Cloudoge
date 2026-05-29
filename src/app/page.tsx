@@ -88,6 +88,17 @@ export default function CloudogeLanding() {
       </section>
 
       {/* 2. LIVE TOKEN INFO */}
+      <section className="py-20 px-4">
+  <div className="max-w-7xl mx-auto border border-white/10 rounded-[2rem] overflow-hidden h-[600px] bg-black/40">
+    <iframe 
+      width="100%" 
+      height="100%" 
+      src={`https://dexscreener.com/worldchain/${contractAddress}?embed=1&theme=dark`}
+      style={{ border: 0 }}
+    ></iframe>
+  </div>
+</section>
+      
       <section className="py-12 px-6 z-10 relative">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4">
           {[
