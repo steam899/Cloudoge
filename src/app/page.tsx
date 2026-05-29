@@ -107,32 +107,88 @@ export default function CloudogeLanding() {
       </section>
 
       {/* 3. ABOUT */}
-      <section id="about" className="py-32 px-6 z-10 relative">
-        <div className="max-w-7xl mx-auto text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6">What is CLOUDOGE?</h2>
-          <p className="text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            CLOUDOGE is a cozy meme token built for community, rewards, and the future of Web3 culture.
-          </p>
-        </div>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
-          {[
-            { t: "Cozy Branding", d: "Premium aesthetic designed for long-term vibes." },
-            { t: "Meme Community", d: "Organic growth driven by the strongest dreamers." },
-            { t: "Community Rewards", d: "Holders are rewarded through ecosystem growth." },
-            { t: "Burn Events", d: "Deflationary pressure through strategic burn cycles." },
-            { t: "Future Mini Apps", d: "Real utility via Telegram and World Chain apps." },
-            { t: "Web3 Expansion", d: "Bridging memes with actual decentralized tools." },
-          ].map((feat, i) => (
-            <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-[#fbbf24]/30 transition-all group">
-              <div className="w-10 h-10 bg-[#fbbf24]/10 rounded-xl flex items-center justify-center text-[#fbbf24] mb-4 group-hover:scale-110 transition-transform">
-                <Rocket size={20} />
-              </div>
-              <h3 className="text-xl font-black text-white mb-2">{feat.t}</h3>
-              <p className="text-slate-500">{feat.d}</p>
+<section
+  id="about"
+  className="py-28 px-6 relative overflow-hidden"
+>
+  <div className="max-w-7xl mx-auto">
+
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-6xl font-black text-white mb-4">
+        What is CLOUDOGE?
+      </h2>
+      <p className="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+        CLOUDOGE is a cozy meme token built for community, rewards,
+        and the future of Web3 culture.
+      </p>
+    </div>
+    {/* Features Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {[
+        {
+          t: "Cozy Branding",
+          d: "Premium aesthetic designed for long-term vibes.",
+          c: "from-[#fbbf24]/20 to-[#f59e0b]/5 border-[#fbbf24]/30"
+        },
+        {
+          t: "Meme Community",
+          d: "Organic growth driven by the strongest dreamers.",
+          c: "from-sky-400/20 to-sky-500/5 border-sky-400/30"
+        },
+        {
+          t: "Community Rewards",
+          d: "Holders are rewarded through ecosystem growth.",
+          c: "from-white/10 to-white/5 border-white/20"
+        },
+        {
+          t: "Burn Events",
+          d: "Deflationary pressure through strategic burn cycles.",
+          c: "from-orange-500/20 to-orange-600/5 border-orange-500/30"
+        },
+        {
+          t: "Future Mini Apps",
+          d: "Real utility via Telegram and World Chain apps.",
+          c: "from-emerald-400/20 to-emerald-500/5 border-emerald-400/30"
+        },
+        {
+          t: "Web3 Expansion",
+          d: "Bridging memes with decentralized ecosystem tools.",
+          c: "from-violet-500/20 to-violet-600/5 border-violet-500/30"
+        },
+      ].map((feat, i) => (
+        <motion.div
+          key={i}
+          whileHover={{ y: -6, scale: 1.02 }}
+          transition={{ duration: 0.2 }}
+          className={`relative p-6 rounded-2xl border bg-gradient-to-br ${feat.c} backdrop-blur-xl overflow-hidden`}
+        >
+          {/* Glow */}
+          <div className="absolute inset-0 opacity-20 bg-white blur-3xl"></div>
+
+          {/* Content */}
+          <div className="relative z-10">
+
+            {/* Icon */}
+            <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-5">
+              <Rocket size={20} />
             </div>
-          ))}
-        </div>
-      </section>
+
+            {/* Title */}
+            <h3 className="text-xl font-black text-white mb-2">
+              {feat.t}
+            </h3>
+
+            {/* Description */}
+            <p className="text-sm text-slate-400 leading-relaxed">
+              {feat.d}
+            </p>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* 5. TOKENOMICS */}
 <section id="tokenomics" className="py-28 px-6 bg-black/20 relative overflow-hidden">
