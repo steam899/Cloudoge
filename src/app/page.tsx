@@ -123,9 +123,9 @@ export default function CloudogeLanding() {
             { t: "Future Mini Apps", d: "Real utility via Telegram and World Chain apps." },
             { t: "Web3 Expansion", d: "Bridging memes with actual decentralized tools." },
           ].map((feat, i) => (
-            <div key={i} className="p-10 rounded-3xl bg-white/5 border border-white/5 hover:border-[#fbbf24]/30 transition-all group">
-              <div className="w-12 h-12 bg-[#fbbf24]/10 rounded-2xl flex items-center justify-center text-[#fbbf24] mb-6 group-hover:scale-110 transition-transform">
-                <Rocket size={24} />
+            <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-[#fbbf24]/30 transition-all group">
+              <div className="w-10 h-10 bg-[#fbbf24]/10 rounded-xl flex items-center justify-center text-[#fbbf24] mb-4 group-hover:scale-110 transition-transform">
+                <Rocket size={20} />
               </div>
               <h3 className="text-xl font-black text-white mb-2">{feat.t}</h3>
               <p className="text-slate-500">{feat.d}</p>
