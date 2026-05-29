@@ -92,7 +92,7 @@ export default function CloudogeLanding() {
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4">
           {[
             { label: "Supply", val: "100M", icon: <Globe size={16}/> },
-            { label: "Burned", val: "550K 🔥", icon: <Flame size={16}/> },
+            { label: "Burned", val: "638.K 🔥", icon: <Flame size={16}/> },
             { label: "Fee", val: "0.55%", icon: <Info size={16}/> },
             { label: "Network", val: "World Chain", icon: <ShieldCheck size={16}/> },
             { label: "Status", val: "Active", icon: <Zap size={16}/> },
@@ -140,9 +140,9 @@ export default function CloudogeLanding() {
           <h2 className="text-4xl md:text-6xl font-black text-white text-center mb-20">Roadmap</h2>
           <div className="space-y-12 border-l-2 border-[#fbbf24]/20 pl-8 ml-4">
             {[
-              { p: "Phase 1", t: "Launch", items: ["Token Launch", "Bonding Curve", "Community Launch"] },
+              { p: "Phase 1", t: "Launch", items: ["Token Launch", "Bonding Curve", "Staking", "Mini App", "Community Launch"] },
               { p: "Phase 2", t: "Growth", items: ["Whitepaper", "Meme Contest", "Marketing Push"] },
-              { p: "Phase 3", t: "Utility", items: ["Staking", "Mini App", "NFT Collection"] },
+              { p: "Phase 3", t: "Utility", items: ["NFT Collection", "Exchage Listing"] },
             ].map((r, i) => (
               <div key={i} className="relative">
                 <div className="absolute -left-[41px] top-0 w-4 h-4 bg-[#fbbf24] rounded-full border-4 border-[#020617]"></div>
