@@ -134,6 +134,100 @@ export default function CloudogeLanding() {
         </div>
       </section>
 
+      {/* 5. TOKENOMICS */}
+<section id="tokenomics" className="py-28 px-6 bg-black/20 relative overflow-hidden">
+
+  <div className="max-w-7xl mx-auto">
+
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-6xl font-black text-white mb-4">
+        Tokenomics
+      </h2>
+
+      <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+        Designed for long-term sustainability, community growth, and strong holder confidence.
+      </p>
+    </div>
+
+    {/* Grid */}
+    <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
+
+      {[
+        {
+          l: "Liquidity",
+          v: "40%",
+          d: "Strong trading stability and healthy market depth.",
+          c: "from-[#fbbf24]/20 to-[#f59e0b]/5 border-[#fbbf24]/30"
+        },
+
+        {
+          l: "Community Rewards",
+          v: "25%",
+          d: "Rewarding holders and ecosystem participation.",
+          c: "from-sky-400/20 to-sky-500/5 border-sky-400/30"
+        },
+
+        {
+          l: "Marketing",
+          v: "15%",
+          d: "Sustaining long-term exposure and growth.",
+          c: "from-white/10 to-white/5 border-white/20"
+        },
+
+        {
+          l: "Burn Reserve",
+          v: "10%",
+          d: "Strategic burn events to reduce supply over time.",
+          c: "from-orange-500/20 to-orange-600/5 border-orange-500/30"
+        },
+
+        {
+          l: "Ecosystem Fund",
+          v: "5%",
+          d: "Supporting future utilities, staking, and mini app expansion.",
+          c: "from-emerald-400/20 to-emerald-500/5 border-emerald-400/30"
+        },
+
+        {
+          l: "Team",
+          v: "5%",
+          d: "Minimal allocation to maintain community trust.",
+          c: "from-slate-500/20 to-slate-600/5 border-slate-500/30"
+        },
+
+      ].map((t, i) => (
+
+        <motion.div
+          key={i}
+          whileHover={{ y: -6, scale: 1.02 }}
+          transition={{ duration: 0.2 }}
+          className={`relative p-6 rounded-2xl border bg-gradient-to-br ${t.c} backdrop-blur-xl overflow-hidden`}
+        >
+
+          {/* Glow */}
+          <div className="absolute inset-0 opacity-20 bg-white blur-3xl"></div>
+
+          {/* Content */}
+          <div className="relative z-10">
+
+            <div className="text-xs uppercase tracking-[0.2em] text-slate-400 font-bold mb-3">
+              {t.l}
+            </div>
+
+            <div className="text-4xl md:text-5xl font-black text-white mb-3">
+              {t.v}
+            </div>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              {t.d}
+            </p>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+ 
       {/* 6. ROADMAP */}
       <section id="roadmap" className="py-32 px-6">
         <div className="max-w-4xl mx-auto">
